@@ -1,0 +1,8 @@
+- name: role kibana
+  hosts: ki-instance
+  roles:
+    - kibana_role
+- name: role filebeat
+  hosts: fb-instance
+  roles:
+    - filebeat_role  

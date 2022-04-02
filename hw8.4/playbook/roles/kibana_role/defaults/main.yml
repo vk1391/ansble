@@ -1,0 +1,4 @@
+---
+elasticsearch_version: "8.1.2"
+kibana_install_type: remote
+

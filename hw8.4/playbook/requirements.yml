@@ -1,0 +1,9 @@
+---
+- src: git@github.com:vk1391/-kibana-role.git
+  scm: git
+  version: "master"
+  name: kibana_role
+- src: git@github.com:vk1391/filebeat-role.git
+  scm: git
+  version: "master"
+  name: filebeat_role
