@@ -1,0 +1,19 @@
+node(docker){
+        parameters {
+               booleanParam defaultValue: true, name: 'prod_run'
+            }
+
+        stage('Checkout') {
+                git branch: 'main', credentialsId: 'd2e52a6d-2c83-46b7-97f3-8f19675bd4d2', url: 'git@github.com:vk1391/ansble.git'
+            }
+        stage('define parametrs') {
+                prod_run = 'True'
+            }
+        stage("Run playbook"){
+        if ('prod_run'){
+            sh 'ansible-playbook hw8.4/playbook/sites.yml -i hw8.4/playbook/inventory/hosts.yml'
+        }
+        else{
+            sh 'ansible-playbook hw8.4/playbook/sites.yml -i hw8.4/playbook/inventory/hosts.yml --check --diff'
+    }
+}
